@@ -15,8 +15,8 @@
 					<header id="header">
 						<span class="avatar"><img src="{{url_for('static',filename='images/avatar.jpg')}}" alt="" /></span>
 
-            <h1>Description</h1>
-            <br>
+            <h1>{{user_bio}}</h1>
+            <br> 
             <!-- About me button -->
             <a href="#"><button style="color:white;width:40%" >More about me</button></a>
             <!--  -->
@@ -30,6 +30,20 @@
 						</ul>
 					</header>
 
+					<ul >
+					{% for i in posts %}
+					<img src="{{i}}" alt="" width="500" height="500" /> <br>
+					<h2> {{posts[i]}} </h2>
+					{% endfor %}
+						</ul>
+					}
+					}
+
+
+
+
+					</ul>
+
 				<!-- Main -->
 					<section id="main">
 
@@ -38,18 +52,18 @@
                 
                 <div>
                       <a href="">
-                        <img src="static/images/thumbs/01.jpg" alt="" />
+                        <img src="{{image}}" alt=""/>
                         <h3>Caption... blah blah blah</h3>
                       </a>
                 
                       <a href="">
-                        <img src="url_for('static',filename='images/thumbs/02.jpg')" alt="" />
+                        <img src="{{url_for('static',filename='images/fulls/02.jpg')}}" alt=""/>
                         <h3>Caption... blah blah blah</h3>
                       </a>
                 </div>    
                 <div>
                   <a href="">
-                        <img src="{{url_for('static',filename='images/thumbs/03.jpg')}}" alt="" />
+                        <img src="{{url_for('static',filename='images/fulls/03.jpg')}}" alt=""/>
                         <h3>Caption... blah blah blah</h3>
                       </a>
                 </div>  
@@ -66,7 +80,7 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+			<script src="url_for('static',filename='js/jquery.min.js')"></script>
 			<script src="static/js/jquery.poptrox.min.js"></script>
 			<script src="static/js/skel.min.js"></script>
 			<script src="static/js/main.js"></script>
